@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Game</h1>
+        <div class="dice"></div>
+        <button class="roll-btn">Roll Dice</button>
+    </div>
+
+    <script>
+        document.querySelector('.roll-btn').addEventListener('click', rollDice);
+
+        function rollDice() {
+            var diceElement = document.querySelector('.dice');
+            var randomNumber = Math.floor(Math.random() * 6) + 1; // Generates a random number between 1 and 6
+            var diceImage = 'dice' + randomNumber + '.png'; // Assuming dice images are named as dice-1.png, dice-2.png, etc.
+
+            // Update the background image of the dice element
+            diceElement.style.backgroundImage = 'url(' + diceImage + ')';
+        }
+    </script>
+</body>
+</html>
